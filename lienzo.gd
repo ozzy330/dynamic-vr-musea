@@ -4,6 +4,7 @@ extends Node3D
 @export var audio: AudioStream
 
 func _ready():
+	$VideoStreamPlayer.visible = false
 	$Area3D.body_entered.connect(_on_area_3d_body_entered)
 	$Area3D.body_exited.connect(_on_area_3d_body_exited)
 
@@ -28,7 +29,7 @@ func _on_area_3d_body_entered(body):
 	if audio:
 		$AudioStreamPlayer3D.play()
 
-func _on_area_3d_body_exited(body):
+func _on_area_3d_body_exited(body):wdwwwwwwwwwwwwwsssdw
 	if video:
 		$VideoStreamPlayer.stop()
 		$VideoStreamPlayer.play()

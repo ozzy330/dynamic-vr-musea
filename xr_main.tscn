@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cxxb1xakap5oc" path="res://xr_origin_3d.tscn" id="2_mxae5"]
 [ext_resource type="PackedScene" uid="uid://cnem6x3708nl4" path="res://lienzo.tscn" id="2_qc7dy"]
 [ext_resource type="VideoStream" uid="uid://b776jy7ddtqvj" path="res://nyan.ogv" id="4_qc7dy"]
+[ext_resource type="AudioStream" uid="uid://djrql6lvd3i5" path="res://pop-music-music-loop-sound.ogg" id="5_qc7dy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d2wx5"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -46,6 +47,10 @@ mesh = SubResource("BoxMesh_qc7dy")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Lienzo" parent="." unique_id=990350539 instance=ExtResource("2_qc7dy")]
-transform = Transform3D(0.96423435, 0, 0.2650513, 0, 1, 0, -0.2650513, 0, 0.96423435, -1.2955192, 2.2000623, -3.646244)
+transform = Transform3D(-0.4065772, 0, -0.9136164, 0, 1, 0, 0.9136164, 0, -0.4065772, 5.645531, 1.5198815, 2.6488757)
 imagen = null
 video = ExtResource("4_qc7dy")
+
+[node name="Lienzo2" parent="." unique_id=1709335506 instance=ExtResource("2_qc7dy")]
+transform = Transform3D(-0.66938996, 0, 0.7429112, 0, 1, 0, -0.7429112, 0, -0.66938996, -5.51893, 1.8641963, 4.104669)
+audio = ExtResource("5_qc7dy")
