@@ -15,3 +15,12 @@ export_credentials.cfg
 .mono/
 data_*/
 mono_crash.*.json
+
+# Android build artifacts (regenerable por Godot)
+android/build/
+
+# Build outputs (APKs, AABs)
+builds/
+
+# Export presets (puede tener credenciales)
+export_presets.cfg

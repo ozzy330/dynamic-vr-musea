@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dok2v4d0ayjvr"]
+
+[ext_resource type="Script" uid="uid://nohfq3bwn8bs" path="res://xr_main.gd" id="1_d2wx5"]
+[ext_resource type="PackedScene" uid="uid://cxxb1xakap5oc" path="res://xr_origin_3d.tscn" id="2_mxae5"]
+[ext_resource type="PackedScene" uid="uid://cnem6x3708nl4" path="res://lienzo.tscn" id="2_qc7dy"]
+[ext_resource type="VideoStream" uid="uid://b776jy7ddtqvj" path="res://nyan.ogv" id="4_qc7dy"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d2wx5"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_mxae5"]
+sky_material = SubResource("ProceduralSkyMaterial_d2wx5")
+
+[sub_resource type="Environment" id="Environment_686up"]
+background_mode = 2
+sky = SubResource("Sky_mxae5")
+tonemap_mode = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_686up"]
+size = Vector3(20, 0.1, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qc7dy"]
+size = Vector3(20, 0.1, 20)
+
+[node name="Main" type="Node3D" unique_id=671727546]
+script = ExtResource("1_d2wx5")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=665683994]
+environment = SubResource("Environment_686up")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=510944310]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1755020167]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1962526359]
+shape = SubResource("BoxShape3D_686up")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D" unique_id=896996890]
+mesh = SubResource("BoxMesh_qc7dy")
+
+[node name="XROrigin3D" parent="." unique_id=587916094 instance=ExtResource("2_mxae5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Lienzo" parent="." unique_id=990350539 instance=ExtResource("2_qc7dy")]
+transform = Transform3D(0.96423435, 0, 0.2650513, 0, 1, 0, -0.2650513, 0, 0.96423435, -1.2955192, 2.2000623, -3.646244)
+imagen = null
+video = ExtResource("4_qc7dy")
