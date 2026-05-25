@@ -29,7 +29,7 @@ func _on_area_3d_body_entered(body):
 	if audio:
 		$AudioStreamPlayer3D.play()
 
-func _on_area_3d_body_exited(body):wdwwwwwwwwwwwwwsssdw
+func _on_area_3d_body_exited(body):
 	if video:
 		$VideoStreamPlayer.stop()
 		$VideoStreamPlayer.play()
