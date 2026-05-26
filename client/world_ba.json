@@ -1,0 +1,7 @@
+{
+  "halls": [
+    { "hallId": "hall1" },
+    { "hallId": "hall2" },
+    { "hallId": "hall3" }
+  ]
+}
