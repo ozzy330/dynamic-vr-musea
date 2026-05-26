@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://widfmmkn8pvm"]
+
+[ext_resource type="PackedScene" uid="uid://cnvrm05sclepd" path="res://garden/Door/wooden_garden_arbour__decorative_arch_trellis.glb" id="1_0kro3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_87ius"]
+size = Vector3(0.4, 5.7, 2.4)
+
+[node name="Sketchfab_Scene" unique_id=1622786958 instance=ExtResource("1_0kro3")]
+
+[node name="Area3D" type="Area3D" parent="." index="1" unique_id=628352682]
+
+[node name="Right" type="CollisionShape3D" parent="Area3D" index="0" unique_id=460122056]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1499996, 2.7499998, 0)
+shape = SubResource("BoxShape3D_87ius")
+
+[node name="Left" type="CollisionShape3D" parent="Area3D" index="1" unique_id=925320133]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.75, 0)
+shape = SubResource("BoxShape3D_87ius")
