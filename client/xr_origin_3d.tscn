@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="2_ojcpv"]
 [ext_resource type="Script" uid="uid://ck4yn3hxuobj7" path="res://addons/godot-xr-tools/player/player_body.gd" id="4_2nlyf"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="4_rhvbn"]
-[ext_resource type="Script" uid="uid://dbe4c8atebpyx" path="res://desktop_input.gd" id="6_qxkev"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rhvbn"]
 
@@ -14,7 +13,6 @@
 [node name="XROrigin3D" type="XROrigin3D" unique_id=587916094]
 
 [node name="XRCamera3D" type="XRCamera3D" parent="." unique_id=221704288]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.13518578)
 
 [node name="LeftHand" type="XRController3D" parent="." unique_id=918656943]
 tracker = &"left_hand"
@@ -33,7 +31,6 @@ tracker = &"right_hand"
 turn_mode = 2
 
 [node name="XRToolsPlayerBody" type="CharacterBody3D" parent="." unique_id=1362460092]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.58895946)
 script = ExtResource("4_2nlyf")
 metadata/_custom_type_script = "uid://ck4yn3hxuobj7"
 
@@ -42,6 +39,3 @@ shape = SubResource("CapsuleShape3D_rhvbn")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XRToolsPlayerBody" unique_id=1535190571]
 mesh = SubResource("CapsuleMesh_qxkev")
-
-[node name="DesktopInput" type="Node" parent="." unique_id=1870191380]
-script = ExtResource("6_qxkev")
