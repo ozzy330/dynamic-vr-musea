@@ -1,0 +1,287 @@
+[gd_scene format=3 uid="uid://b4mjapqo47ir7"]
+
+[ext_resource type="Script" uid="uid://c0jvwjuyrm7tb" path="res://hall.gd" id="1_7ehf5"]
+[ext_resource type="Texture2D" uid="uid://2rdiekwc5o07" path="res://asset/prototype-textures/Dark/texture_04.png" id="1_7xwsd"]
+[ext_resource type="Texture2D" uid="uid://bs4ke0wp3dvcs" path="res://asset/prototype-textures/Green/texture_02.png" id="2_afllm"]
+[ext_resource type="Texture2D" uid="uid://ys1hgbg2shxv" path="res://asset/prototype-textures/Purple/texture_05.png" id="3_f27hy"]
+[ext_resource type="Texture2D" uid="uid://dg4xryp3ikopq" path="res://asset/prototype-textures/Green/texture_09.png" id="5_cqlca"]
+[ext_resource type="PackedScene" uid="uid://cnem6x3708nl4" path="res://lienzo.tscn" id="6_7ebjl"]
+[ext_resource type="Texture2D" uid="uid://brwyah73lbrtn" path="res://asset/prototype-textures/Green/texture_05.png" id="6_pnatv"]
+[ext_resource type="Texture2D" uid="uid://cna7ioyvg282u" path="res://asset/prototype-textures/Light/texture_02.png" id="7_xskqr"]
+[ext_resource type="Texture2D" uid="uid://cxucwc6rvw5ib" path="res://asset/prototype-textures/Purple/texture_09.png" id="8_afllm"]
+[ext_resource type="Texture2D" uid="uid://cn5a3w8xl6jed" path="res://asset/prototype-textures/Red/texture_05.png" id="8_f50ga"]
+[ext_resource type="Texture2D" uid="uid://btbrqadstbhbg" path="res://asset/prototype-textures/Light/texture_07.png" id="9_f27hy"]
+[ext_resource type="Texture2D" uid="uid://cagmp16oo3wrs" path="res://asset/prototype-textures/Green/texture_10.png" id="11_cqlca"]
+[ext_resource type="PackedScene" uid="uid://widfmmkn8pvm" path="res://garden/Door/Door.tscn" id="13_f50ga"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g14j6"]
+albedo_texture = ExtResource("1_7xwsd")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8uh7m"]
+albedo_texture = ExtResource("2_afllm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xersf"]
+albedo_texture = ExtResource("3_f27hy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_37kl0"]
+albedo_texture = ExtResource("2_afllm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vbegm"]
+albedo_texture = ExtResource("7_xskqr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6uqi0"]
+albedo_texture = ExtResource("8_f50ga")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_f50ga"]
+radius = 2.6000001
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ebjl"]
+albedo_texture = ExtResource("6_pnatv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_00tp4"]
+albedo_texture = ExtResource("8_afllm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ehkex"]
+albedo_texture = ExtResource("5_cqlca")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f50ga"]
+albedo_texture = ExtResource("2_afllm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pnatv"]
+albedo_texture = ExtResource("9_f27hy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ehf5"]
+albedo_texture = ExtResource("2_afllm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4hql4"]
+albedo_texture = ExtResource("2_afllm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xskqr"]
+albedo_texture = ExtResource("11_cqlca")
+
+[node name="Hall" type="Node3D" unique_id=1656853575]
+script = ExtResource("1_7ehf5")
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=1499173939]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, 0)
+use_collision = true
+size = Vector3(25, 0.3, 20)
+material = SubResource("StandardMaterial3D_g14j6")
+
+[node name="Plants" type="CSGTorus3D" parent="." unique_id=228274573]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27258635, 0)
+use_collision = true
+inner_radius = 4.1604886
+outer_radius = 5.863439
+sides = 12
+ring_sides = 9
+material = SubResource("StandardMaterial3D_8uh7m")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Plants" unique_id=1785137434]
+material_override = SubResource("StandardMaterial3D_xersf")
+operation = 2
+size = Vector3(15, 5, 5)
+material = SubResource("StandardMaterial3D_37kl0")
+
+[node name="Wall2" type="CSGBox3D" parent="." unique_id=1648151865]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 6)
+use_collision = true
+size = Vector3(20, 5, 10)
+material = SubResource("StandardMaterial3D_vbegm")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Wall2" unique_id=1741536130]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.50543994, 0, 0, -2.4814816)
+operation = 2
+radius = 11.0
+height = 5.0
+sides = 24
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Wall2" unique_id=773904514]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.8518515)
+operation = 2
+size = Vector3(20, 5, 7)
+
+[node name="Slot1" type="CSGBox3D" parent="Wall2" unique_id=946963360]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 2.707408)
+operation = 2
+size = Vector3(5, 3, 1.5)
+material = SubResource("StandardMaterial3D_6uqi0")
+
+[node name="Lienzo" parent="Wall2/Slot1" unique_id=990350539 instance=ExtResource("6_7ebjl")]
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 0, 0, 0.5)
+ancho = 5.0
+alto = 3.0
+
+[node name="Area3D" type="Area3D" parent="Wall2/Slot1/Lienzo" unique_id=1016318904]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2/Slot1/Lienzo/Area3D" unique_id=2126876849]
+shape = SubResource("CylinderShape3D_f50ga")
+
+[node name="Slot2" type="CSGBox3D" parent="Wall2" unique_id=1668763842]
+transform = Transform3D(0.93969274, 0, -0.34202018, 0, 1, 0, 0.34202018, 0, 0.93969274, -6, 0.5, 1.7074084)
+operation = 2
+size = Vector3(5, 3, 1.5)
+material = SubResource("StandardMaterial3D_6uqi0")
+
+[node name="Lienzo" parent="Wall2/Slot2" unique_id=388716661 instance=ExtResource("6_7ebjl")]
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 0, 0, 0.5)
+ancho = 5.0
+alto = 3.0
+
+[node name="Area3D" type="Area3D" parent="Wall2/Slot2/Lienzo" unique_id=979338156]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2/Slot2/Lienzo/Area3D" unique_id=968544292]
+shape = SubResource("CylinderShape3D_f50ga")
+
+[node name="Slot3" type="CSGBox3D" parent="Wall2" unique_id=1106240038]
+transform = Transform3D(0.93969285, 0, 0.3420202, 0, 1, 0, -0.3420202, 0, 0.93969285, 6, 0.5, 1.707)
+operation = 2
+size = Vector3(5, 3, 1.5)
+material = SubResource("StandardMaterial3D_6uqi0")
+
+[node name="Lienzo" parent="Wall2/Slot3" unique_id=436360965 instance=ExtResource("6_7ebjl")]
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 0, 0, 0.5)
+ancho = 5.0
+alto = 3.0
+
+[node name="Area3D" type="Area3D" parent="Wall2/Slot3/Lienzo" unique_id=287376654]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2/Slot3/Lienzo/Area3D" unique_id=1380130895]
+shape = SubResource("CylinderShape3D_f50ga")
+
+[node name="Wall3" type="CSGBox3D" parent="." unique_id=1713910046]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 2, -6)
+use_collision = true
+size = Vector3(20, 5, 10)
+material = SubResource("StandardMaterial3D_vbegm")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Wall3" unique_id=1786950069]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.50543994, 0, 0, -2.4814816)
+material_override = SubResource("StandardMaterial3D_7ebjl")
+operation = 2
+radius = 11.0
+height = 5.0
+sides = 24
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Wall3" unique_id=521138458]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.8518515)
+operation = 2
+size = Vector3(20, 5, 7)
+
+[node name="Slot1" type="CSGBox3D" parent="Wall3" unique_id=28848512]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 2.707408)
+operation = 2
+size = Vector3(5, 3, 1.5)
+material = SubResource("StandardMaterial3D_6uqi0")
+
+[node name="Lienzo" parent="Wall3/Slot1" unique_id=1888336870 instance=ExtResource("6_7ebjl")]
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 0, 0, 0.5)
+ancho = 5.0
+alto = 3.0
+
+[node name="Area3D" type="Area3D" parent="Wall3/Slot1/Lienzo" unique_id=293812188]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall3/Slot1/Lienzo/Area3D" unique_id=1263260789]
+shape = SubResource("CylinderShape3D_f50ga")
+
+[node name="Slot2" type="CSGBox3D" parent="Wall3" unique_id=1906438247]
+transform = Transform3D(0.93969274, 0, -0.34202018, 0, 1, 0, 0.34202018, 0, 0.93969274, -6, 0.5, 1.7074084)
+operation = 2
+size = Vector3(5, 3, 1.5)
+material = SubResource("StandardMaterial3D_6uqi0")
+
+[node name="Lienzo" parent="Wall3/Slot2" unique_id=1843937167 instance=ExtResource("6_7ebjl")]
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 0, 0, 0.5)
+ancho = 5.0
+alto = 3.0
+
+[node name="Area3D" type="Area3D" parent="Wall3/Slot2/Lienzo" unique_id=174318367]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall3/Slot2/Lienzo/Area3D" unique_id=192546001]
+shape = SubResource("CylinderShape3D_f50ga")
+
+[node name="Slot3" type="CSGBox3D" parent="Wall3" unique_id=57651422]
+transform = Transform3D(0.93969285, 0, 0.3420202, 0, 1, 0, -0.3420202, 0, 0.93969285, 6, 0.5, 1.707)
+operation = 2
+size = Vector3(5, 3, 1.5)
+material = SubResource("StandardMaterial3D_6uqi0")
+
+[node name="Lienzo" parent="Wall3/Slot3" unique_id=1604248498 instance=ExtResource("6_7ebjl")]
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 0, 0, 0.5)
+ancho = 5.0
+alto = 3.0
+
+[node name="Area3D" type="Area3D" parent="Wall3/Slot3/Lienzo" unique_id=1396451282]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall3/Slot3/Lienzo/Area3D" unique_id=980673634]
+shape = SubResource("CylinderShape3D_f50ga")
+
+[node name="DoorB" type="Node3D" parent="." unique_id=337510580]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9, 0, -2)
+
+[node name="Flower1" type="CSGBox3D" parent="DoorB" unique_id=507729880]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.4, 0)
+use_collision = true
+material = SubResource("StandardMaterial3D_00tp4")
+
+[node name="Flower2" type="CSGBox3D" parent="DoorB" unique_id=208862833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9999999, 0.4, 0)
+use_collision = true
+material = SubResource("StandardMaterial3D_00tp4")
+
+[node name="Arc" parent="DoorB" unique_id=1622786958 instance=ExtResource("13_f50ga")]
+
+[node name="Bush1" type="CSGBox3D" parent="DoorB" unique_id=1381904577]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.6499996, 1.4, 2)
+material_override = SubResource("StandardMaterial3D_ehkex")
+use_collision = true
+size = Vector3(3, 3, 5.7000003)
+material = SubResource("StandardMaterial3D_f50ga")
+
+[node name="Bush2" type="CSGBox3D" parent="DoorB" unique_id=409238769]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.75, 1.4, 2)
+material_override = SubResource("StandardMaterial3D_ehkex")
+use_collision = true
+size = Vector3(3, 3, 5.5)
+material = SubResource("StandardMaterial3D_f50ga")
+
+[node name="BackBush" type="CSGBox3D" parent="DoorB" unique_id=216875314]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.3500001, 1.9, 2.5)
+material_override = SubResource("StandardMaterial3D_ehkex")
+use_collision = true
+size = Vector3(2, 4, 5.5)
+material = SubResource("StandardMaterial3D_f50ga")
+
+[node name="DoorA" type="Node3D" parent="." unique_id=1395355086]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 9, 0, -2)
+
+[node name="Flower1" type="CSGBox3D" parent="DoorA" unique_id=987186237]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.39999998, 0)
+material = SubResource("StandardMaterial3D_pnatv")
+
+[node name="Flower2" type="CSGBox3D" parent="DoorA" unique_id=837776404]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.39999998, 0)
+material = SubResource("StandardMaterial3D_pnatv")
+
+[node name="Arc" parent="DoorA" unique_id=1923093875 instance=ExtResource("13_f50ga")]
+
+[node name="Bush1" type="CSGBox3D" parent="DoorA" unique_id=917810538]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.6499996, 1.4, -2)
+material_override = SubResource("StandardMaterial3D_ehkex")
+use_collision = true
+size = Vector3(3, 3, 5.7000003)
+material = SubResource("StandardMaterial3D_7ehf5")
+
+[node name="Bush2" type="CSGBox3D" parent="DoorA" unique_id=957594848]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.75, 1.4, -2)
+material_override = SubResource("StandardMaterial3D_ehkex")
+use_collision = true
+size = Vector3(3, 3, 5.5)
+material = SubResource("StandardMaterial3D_4hql4")
+
+[node name="BackBush" type="CSGBox3D" parent="DoorA" unique_id=997935089]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.3500006, 1.9, -2.5)
+material_override = SubResource("StandardMaterial3D_xskqr")
+use_collision = true
+size = Vector3(2, 4, 5.5)
+material = SubResource("StandardMaterial3D_4hql4")
