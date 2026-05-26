@@ -18,6 +18,7 @@ mono_crash.*.json
 
 # Android build artifacts (regenerable por Godot)
 android/build/
+client/android/build/
 
 # Build outputs (APKs, AABs)
 builds/
