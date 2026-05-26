@@ -83,79 +83,79 @@ operation = 2
 size = Vector3(15, 5, 5)
 material = SubResource("StandardMaterial3D_37kl0")
 
-[node name="Wall2" type="CSGBox3D" parent="." unique_id=1648151865]
+[node name="Wall1" type="CSGBox3D" parent="." unique_id=1648151865]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 6)
 use_collision = true
 size = Vector3(20, 5, 10)
 material = SubResource("StandardMaterial3D_vbegm")
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Wall2" unique_id=1741536130]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Wall1" unique_id=1741536130]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.50543994, 0, 0, -2.4814816)
 operation = 2
 radius = 11.0
 height = 5.0
 sides = 24
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Wall2" unique_id=773904514]
+[node name="CSGBox3D" type="CSGBox3D" parent="Wall1" unique_id=773904514]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.8518515)
 operation = 2
 size = Vector3(20, 5, 7)
 
-[node name="Slot1" type="CSGBox3D" parent="Wall2" unique_id=946963360]
+[node name="Slot1" type="CSGBox3D" parent="Wall1" unique_id=946963360]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 2.707408)
 operation = 2
 size = Vector3(5, 3, 1.5)
 material = SubResource("StandardMaterial3D_6uqi0")
 
-[node name="Lienzo" parent="Wall2/Slot1" unique_id=990350539 instance=ExtResource("6_7ebjl")]
+[node name="Lienzo" parent="Wall1/Slot1" unique_id=990350539 instance=ExtResource("6_7ebjl")]
 transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 0, 0, 0.5)
 ancho = 5.0
 alto = 3.0
 
-[node name="Area3D" type="Area3D" parent="Wall2/Slot1/Lienzo" unique_id=1016318904]
+[node name="Area3D" type="Area3D" parent="Wall1/Slot1/Lienzo" unique_id=1016318904]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2/Slot1/Lienzo/Area3D" unique_id=2126876849]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall1/Slot1/Lienzo/Area3D" unique_id=2126876849]
 shape = SubResource("CylinderShape3D_f50ga")
 
-[node name="Slot2" type="CSGBox3D" parent="Wall2" unique_id=1668763842]
+[node name="Slot2" type="CSGBox3D" parent="Wall1" unique_id=1668763842]
 transform = Transform3D(0.93969274, 0, -0.34202018, 0, 1, 0, 0.34202018, 0, 0.93969274, -6, 0.5, 1.7074084)
 operation = 2
 size = Vector3(5, 3, 1.5)
 material = SubResource("StandardMaterial3D_6uqi0")
 
-[node name="Lienzo" parent="Wall2/Slot2" unique_id=388716661 instance=ExtResource("6_7ebjl")]
+[node name="Lienzo" parent="Wall1/Slot2" unique_id=388716661 instance=ExtResource("6_7ebjl")]
 transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 0, 0, 0.5)
 ancho = 5.0
 alto = 3.0
 
-[node name="Area3D" type="Area3D" parent="Wall2/Slot2/Lienzo" unique_id=979338156]
+[node name="Area3D" type="Area3D" parent="Wall1/Slot2/Lienzo" unique_id=979338156]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2/Slot2/Lienzo/Area3D" unique_id=968544292]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall1/Slot2/Lienzo/Area3D" unique_id=968544292]
 shape = SubResource("CylinderShape3D_f50ga")
 
-[node name="Slot3" type="CSGBox3D" parent="Wall2" unique_id=1106240038]
+[node name="Slot3" type="CSGBox3D" parent="Wall1" unique_id=1106240038]
 transform = Transform3D(0.93969285, 0, 0.3420202, 0, 1, 0, -0.3420202, 0, 0.93969285, 6, 0.5, 1.707)
 operation = 2
 size = Vector3(5, 3, 1.5)
 material = SubResource("StandardMaterial3D_6uqi0")
 
-[node name="Lienzo" parent="Wall2/Slot3" unique_id=436360965 instance=ExtResource("6_7ebjl")]
+[node name="Lienzo" parent="Wall1/Slot3" unique_id=436360965 instance=ExtResource("6_7ebjl")]
 transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 0, 0, 0.5)
 ancho = 5.0
 alto = 3.0
 
-[node name="Area3D" type="Area3D" parent="Wall2/Slot3/Lienzo" unique_id=287376654]
+[node name="Area3D" type="Area3D" parent="Wall1/Slot3/Lienzo" unique_id=287376654]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2/Slot3/Lienzo/Area3D" unique_id=1380130895]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall1/Slot3/Lienzo/Area3D" unique_id=1380130895]
 shape = SubResource("CylinderShape3D_f50ga")
 
-[node name="Wall3" type="CSGBox3D" parent="." unique_id=1713910046]
+[node name="Wall2" type="CSGBox3D" parent="." unique_id=1713910046]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 2, -6)
 use_collision = true
 size = Vector3(20, 5, 10)
 material = SubResource("StandardMaterial3D_vbegm")
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Wall3" unique_id=1786950069]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Wall2" unique_id=1786950069]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.50543994, 0, 0, -2.4814816)
 material_override = SubResource("StandardMaterial3D_7ebjl")
 operation = 2
@@ -163,57 +163,57 @@ radius = 11.0
 height = 5.0
 sides = 24
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Wall3" unique_id=521138458]
+[node name="CSGBox3D" type="CSGBox3D" parent="Wall2" unique_id=521138458]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.8518515)
 operation = 2
 size = Vector3(20, 5, 7)
 
-[node name="Slot1" type="CSGBox3D" parent="Wall3" unique_id=28848512]
+[node name="Slot1" type="CSGBox3D" parent="Wall2" unique_id=28848512]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 2.707408)
 operation = 2
 size = Vector3(5, 3, 1.5)
 material = SubResource("StandardMaterial3D_6uqi0")
 
-[node name="Lienzo" parent="Wall3/Slot1" unique_id=1888336870 instance=ExtResource("6_7ebjl")]
+[node name="Lienzo" parent="Wall2/Slot1" unique_id=1888336870 instance=ExtResource("6_7ebjl")]
 transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 0, 0, 0.5)
 ancho = 5.0
 alto = 3.0
 
-[node name="Area3D" type="Area3D" parent="Wall3/Slot1/Lienzo" unique_id=293812188]
+[node name="Area3D" type="Area3D" parent="Wall2/Slot1/Lienzo" unique_id=293812188]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall3/Slot1/Lienzo/Area3D" unique_id=1263260789]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2/Slot1/Lienzo/Area3D" unique_id=1263260789]
 shape = SubResource("CylinderShape3D_f50ga")
 
-[node name="Slot2" type="CSGBox3D" parent="Wall3" unique_id=1906438247]
+[node name="Slot2" type="CSGBox3D" parent="Wall2" unique_id=1906438247]
 transform = Transform3D(0.93969274, 0, -0.34202018, 0, 1, 0, 0.34202018, 0, 0.93969274, -6, 0.5, 1.7074084)
 operation = 2
 size = Vector3(5, 3, 1.5)
 material = SubResource("StandardMaterial3D_6uqi0")
 
-[node name="Lienzo" parent="Wall3/Slot2" unique_id=1843937167 instance=ExtResource("6_7ebjl")]
+[node name="Lienzo" parent="Wall2/Slot2" unique_id=1843937167 instance=ExtResource("6_7ebjl")]
 transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 0, 0, 0.5)
 ancho = 5.0
 alto = 3.0
 
-[node name="Area3D" type="Area3D" parent="Wall3/Slot2/Lienzo" unique_id=174318367]
+[node name="Area3D" type="Area3D" parent="Wall2/Slot2/Lienzo" unique_id=174318367]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall3/Slot2/Lienzo/Area3D" unique_id=192546001]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2/Slot2/Lienzo/Area3D" unique_id=192546001]
 shape = SubResource("CylinderShape3D_f50ga")
 
-[node name="Slot3" type="CSGBox3D" parent="Wall3" unique_id=57651422]
+[node name="Slot3" type="CSGBox3D" parent="Wall2" unique_id=57651422]
 transform = Transform3D(0.93969285, 0, 0.3420202, 0, 1, 0, -0.3420202, 0, 0.93969285, 6, 0.5, 1.707)
 operation = 2
 size = Vector3(5, 3, 1.5)
 material = SubResource("StandardMaterial3D_6uqi0")
 
-[node name="Lienzo" parent="Wall3/Slot3" unique_id=1604248498 instance=ExtResource("6_7ebjl")]
+[node name="Lienzo" parent="Wall2/Slot3" unique_id=1604248498 instance=ExtResource("6_7ebjl")]
 transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 0, 0, 0.5)
 ancho = 5.0
 alto = 3.0
 
-[node name="Area3D" type="Area3D" parent="Wall3/Slot3/Lienzo" unique_id=1396451282]
+[node name="Area3D" type="Area3D" parent="Wall2/Slot3/Lienzo" unique_id=1396451282]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall3/Slot3/Lienzo/Area3D" unique_id=980673634]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2/Slot3/Lienzo/Area3D" unique_id=980673634]
 shape = SubResource("CylinderShape3D_f50ga")
 
 [node name="DoorB" type="Node3D" parent="." unique_id=337510580]
