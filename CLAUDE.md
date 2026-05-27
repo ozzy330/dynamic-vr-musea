@@ -9,31 +9,41 @@
 Cliente VR en Godot consume API REST que devuelve eventos/cuadros.
 El servidor es fuente de verdad del contenido — Godot solo renderiza.
 
-## Schema de evento (unidad básica de contenido)
+## Schema del JSON de mundo (world.json / API)
 ```json
 {
-    "eventId": "mi_evento",
-    "title": "Título",
-    "dateDisplay": "2026",
-    "year": 2026,
-    "description": "Descripción detallada...",
-    "summary": "Resumen corto.",
-    "mediaType": "photo",
-    "imagePath": "mi_foto.jpg",
-    "videoPath": "",
-    "videoAutoplay": false,
-    "videoLoop": false,
-    "voiceoverPath": "",
-    "additionalImages": [],
-    "narrationAudioPath": "",
-    "ambientAudioPath": "",
-    "hallId": "origenes",
-    "positionIndex": 0,
-    "wallSide": 0,
-    "tags": ["tag1"],
-    "imageCredit": "Fuente"
+  "halls": [
+    {
+      "hallId": "nombre_sala",
+      "slots": [
+        {
+          "wall": 0,
+          "slot": 0,
+          "asset": {
+            "imagen": "res://ruta/foto.jpg",
+            "video":  "res://ruta/clip.ogv",
+            "audio":  "res://ruta/sonido.ogg",
+            "video_with_audio": true
+          }
+        }
+      ]
+    }
+  ]
 }
 ```
+
+### Campos de `asset` (todos opcionales)
+| campo | tipo | descripción |
+|---|---|---|
+| `imagen` | string | ruta `res://` a imagen (jpg/png/webp) |
+| `video`  | string | ruta `res://` a video (ogv/mp4/webm) |
+| `audio`  | string | ruta `res://` a audio separado (ogg) — solo se usa si `video_with_audio` es `false` |
+| `video_with_audio` | bool | `true` (default) = video reproduce su audio embebido; `false` = VideoStreamPlayer muteado, AudioStreamPlayer3D usa campo `audio` |
+
+### Mapeo de índices → nodos Godot
+- `wall: 0` → `Wall1`, `wall: 1` → `Wall2`
+- `slot: 0` → `Slot1`, `slot: 1` → `Slot2`, `slot: 2` → `Slot3`
+- Ruta de nodo resuelta: `Wall{wall+1}/Slot{slot+1}/Lienzo`
 
 ## Mapeo schema → escena Godot
 - hallId → room/node a activar (dinámico, se instancia si no existe)
