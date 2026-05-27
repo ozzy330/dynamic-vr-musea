@@ -17,7 +17,8 @@ extends Node3D
 		alto = v
 		_apply_size()
 
-var _area: Area3D = null
+var _area: Area3D            = null
+var _video_with_audio: bool = true   # false → VideoStreamPlayer muteado, AudioStreamPlayer3D activo
 
 
 # ── Editor warnings ────────────────────────────────────────────────────────────
@@ -74,10 +75,51 @@ func _ready() -> void:
 		_area.body_entered.connect(_on_body_entered)
 		_area.body_exited.connect(_on_body_exited)
 
+	# Apply exports set from the editor (no-op if called again via load_asset).
+	_setup_content()
+
+
+# ── Content loading ────────────────────────────────────────────────────────────
+
+## Carga imagen, video y/o audio desde un dict {imagen, video, audio, video_with_audio}.
+## video_with_audio (bool, default true):
+##   true  → VideoStreamPlayer suena normal, campo "audio" ignorado.
+##   false → VideoStreamPlayer muteado, AudioStreamPlayer3D carga "audio" si existe.
+func load_asset(asset: Dictionary) -> void:
+	if asset.is_empty():
+		return
+	var video_path:  String = asset.get("video",            "")
+	var imagen_path: String = asset.get("imagen",           "")
+	var audio_path:  String = asset.get("audio",            "")
+	_video_with_audio        = asset.get("video_with_audio", true)
+
+	if not video_path.is_empty():
+		video  = load(video_path)
+		imagen = null
+	elif not imagen_path.is_empty():
+		imagen = load(imagen_path)
+		video  = null
+
+	# Load separate audio when:
+	#   - there is no video (image slot → never a conflict), OR
+	#   - there is video but video_with_audio = false (video is muted).
+	if not audio_path.is_empty() and (video == null or not _video_with_audio):
+		audio = load(audio_path)
+	else:
+		audio = null
+
+	_setup_content()
+
+
+func _setup_content() -> void:
+	if Engine.is_editor_hint():
+		return
 	if video:
 		$VideoStreamPlayer.stream = video
 		$VideoStreamPlayer.play()
 		$VideoStreamPlayer.paused = true
+		# Mute when video_with_audio = false so the AudioStreamPlayer3D takes over.
+		$VideoStreamPlayer.volume = 1.0 if _video_with_audio else 0.0
 		var mat := StandardMaterial3D.new()
 		mat.albedo_texture = $VideoStreamPlayer.get_video_texture()
 		$MeshInstance3D.material_override = mat
@@ -85,19 +127,23 @@ func _ready() -> void:
 		var mat := StandardMaterial3D.new()
 		mat.albedo_texture = imagen
 		$MeshInstance3D.material_override = mat
-
 	if audio:
 		$AudioStreamPlayer3D.stream = audio
 
 
-func _on_body_entered(_body) -> void:
+func _on_body_entered(body) -> void:
+	# Only react to bodies on collision layer 2 (the XR player).
+	if not (body.collision_layer & 2):
+		return
 	if video:
 		$VideoStreamPlayer.paused = false
 	if audio:
 		$AudioStreamPlayer3D.play()
 
 
-func _on_body_exited(_body) -> void:
+func _on_body_exited(body) -> void:
+	if not (body.collision_layer & 2):
+		return
 	if video:
 		$VideoStreamPlayer.stop()
 		$VideoStreamPlayer.play()
