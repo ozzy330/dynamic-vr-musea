@@ -1,7 +1,7 @@
 extends Node3D
 
 # Path to the world JSON. Change in Inspector to swap test configurations.
-@export_file("*.json") var world_json_path: String = "res://world_ab.json"
+@export_file("*.json") var world_json_path: String = "res://world.json"
 
 const HALL_SCENE   = preload("res://hall_basic.tscn")
 const HALL_SPACING = 25.0   # units between hall centers

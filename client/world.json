@@ -1,0 +1,26 @@
+{
+  "halls": [
+    {
+      "hallId": "sala_entrada",
+      "slots": [
+        { "wall": 0, "slot": 0, "asset": { "imagen": "res://media/images/gatito.jpg" } },
+        { "wall": 0, "slot": 1, "asset": { "imagen": "res://media/images/gatito.jpg", "audio": "res://media/audio/pop-music-music-loop-sound.ogg" } },
+        { "wall": 0, "slot": 2, "asset": { "video": "res://media/video/nyan.ogv", "video_with_audio": false, "audio": "res://media/audio/pop-music-music-loop-sound.ogg" } },
+        { "wall": 1, "slot": 0, "asset": { "imagen": "res://media/images/gatito.jpg" } },
+        { "wall": 1, "slot": 1, "asset": { "video": "res://media/video/nyan.ogv", "video_with_audio": true } },
+        { "wall": 1, "slot": 2, "asset": { "imagen": "res://media/images/gatito.jpg" } }
+      ]
+    },
+    {
+      "hallId": "sala_video",
+      "slots": [
+        { "wall": 0, "slot": 0, "asset": { "video": "res://media/video/nyan.ogv", "video_with_audio": false, "audio": "res://media/audio/pop-music-music-loop-sound.ogg" } },
+        { "wall": 0, "slot": 1, "asset": { "video": "res://media/video/nyan.ogv", "video_with_audio": true } },
+        { "wall": 0, "slot": 2, "asset": { "imagen": "res://media/images/gatito.jpg" } },
+        { "wall": 1, "slot": 0, "asset": { "video": "res://media/video/nyan.ogv", "video_with_audio": false, "audio": "res://media/audio/pop-music-music-loop-sound.ogg" } },
+        { "wall": 1, "slot": 1, "asset": { "imagen": "res://media/images/gatito.jpg" } },
+        { "wall": 1, "slot": 2, "asset": { "video": "res://media/video/nyan.ogv", "video_with_audio": true } }
+      ]
+    }
+  ]
+}
