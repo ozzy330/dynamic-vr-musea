@@ -1,0 +1,20 @@
+{
+  "halls": [
+    {
+      "hallId": "hall1",
+      "slots": [
+        { "wall": 0, "slot": 0, "asset": "images/gatito.jpg" },
+        { "wall": 0, "slot": 1, "asset": "images/gatito.jpg" },
+        { "wall": 0, "slot": 2, "asset": "video/nyan.ogv" }
+      ]
+    },
+    {
+      "hallId": "hall2",
+      "slots": [
+        { "wall": 1, "slot": 0, "asset": "images/gatito.jpg" },
+        { "wall": 1, "slot": 1, "asset": "video/nyan.ogv" },
+        { "wall": 0, "slot": 2, "asset": "images/gatito.jpg" }
+      ]
+    }
+  ]
+}
