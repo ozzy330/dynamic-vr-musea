@@ -17,6 +17,7 @@ tonemap_mode = 2
 
 [node name="Main" type="Node3D" unique_id=671727546]
 script = ExtResource("1_d2wx5")
+server_url = "http://192.168.100.46:8080"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=665683994]
 environment = SubResource("Environment_686up")
@@ -26,4 +27,4 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="XROrigin3D" parent="." unique_id=587916094 instance=ExtResource("2_mxae5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.382812, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.382812, 0)

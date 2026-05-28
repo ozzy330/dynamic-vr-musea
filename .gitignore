@@ -30,3 +30,5 @@ export_presets.cfg
 client/media/images/*.jpg
 client/media/audio/*.ogg
 client/media/video/*.ogv
+
+server/media/*
