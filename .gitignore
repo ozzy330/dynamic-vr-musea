@@ -25,3 +25,8 @@ builds/
 
 # Export presets (puede tener credenciales)
 export_presets.cfg
+
+# Media descargada por download_media.sh — solo va en server/, nunca en client/
+client/media/images/*.jpg
+client/media/audio/*.ogg
+client/media/video/*.ogv
