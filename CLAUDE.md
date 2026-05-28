@@ -41,9 +41,10 @@ El servidor es fuente de verdad del contenido — Godot solo renderiza.
 | `video_with_audio` | bool | `true` (default) = video reproduce su audio embebido; `false` = VideoStreamPlayer muteado, AudioStreamPlayer3D usa campo `audio` |
 
 ### Mapeo de índices → nodos Godot
-- `wall: 0` → `Wall1`, `wall: 1` → `Wall2`
-- `slot: 0` → `Slot1`, `slot: 1` → `Slot2`, `slot: 2` → `Slot3`
+- `wall: 0` → `Wall1`, `wall: 1` → `Wall2`  (**máximo wall: 1** — hall_basic.tscn solo tiene 2 paredes)
+- `slot: 0` → `Slot1`, `slot: 1` → `Slot2`, `slot: 2` → `Slot3`  (**máximo slot: 2**)
 - Ruta de nodo resuelta: `Wall{wall+1}/Slot{slot+1}/Lienzo`
+- Capacidad máxima por hall: **6 slots** (2 walls × 3 slots)
 
 ## Mapeo schema → escena Godot
 - hallId → room/node a activar (dinámico, se instancia si no existe)
