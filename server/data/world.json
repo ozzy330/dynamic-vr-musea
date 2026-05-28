@@ -1,19 +1,36 @@
 {
   "halls": [
     {
-      "hallId": "hall1",
+      "hallId": "sala_arte",
       "slots": [
-        { "wall": 0, "slot": 0, "asset": "images/gatito.jpg" },
-        { "wall": 0, "slot": 1, "asset": "images/gatito.jpg" },
-        { "wall": 0, "slot": 2, "asset": "video/nyan.ogv" }
+        { "wall": 0, "slot": 0, "asset": { "imagen": "res://media/images/starry_night.jpg",  "audio": "res://media/audio/arte_chopin.ogg" } },
+        { "wall": 0, "slot": 1, "asset": { "imagen": "res://media/images/water_lilies.jpg",  "audio": "res://media/audio/arte_chopin.ogg" } },
+        { "wall": 0, "slot": 2, "asset": { "video":  "res://media/video/arte_adelboden.ogv", "video_with_audio": true } },
+        { "wall": 1, "slot": 0, "asset": { "imagen": "res://media/images/the_kiss.jpg",      "audio": "res://media/audio/arte_chopin.ogg" } },
+        { "wall": 1, "slot": 1, "asset": { "imagen": "res://media/images/girl_pearl.jpg" } },
+        { "wall": 1, "slot": 2, "asset": { "imagen": "res://media/images/great_wave.jpg" } }
       ]
     },
     {
-      "hallId": "hall2",
+      "hallId": "sala_naturaleza",
       "slots": [
-        { "wall": 1, "slot": 0, "asset": "images/gatito.jpg" },
-        { "wall": 1, "slot": 1, "asset": "video/nyan.ogv" },
-        { "wall": 0, "slot": 2, "asset": "images/gatito.jpg" }
+        { "wall": 0, "slot": 0, "asset": { "imagen": "res://media/images/aurora.jpg",       "audio": "res://media/audio/nat_birds.ogg" } },
+        { "wall": 0, "slot": 1, "asset": { "imagen": "res://media/images/gullfoss.jpg",      "audio": "res://media/audio/nat_birds.ogg" } },
+        { "wall": 0, "slot": 2, "asset": { "video":  "res://media/video/nat_waterfall.ogv", "video_with_audio": false, "audio": "res://media/audio/nat_birds.ogg" } },
+        { "wall": 1, "slot": 0, "asset": { "imagen": "res://media/images/yosemite.jpg" } },
+        { "wall": 1, "slot": 1, "asset": { "imagen": "res://media/images/coral_reef.jpg" } },
+        { "wall": 1, "slot": 2, "asset": { "video":  "res://media/video/volcano_lava.ogv",  "video_with_audio": false, "audio": "res://media/audio/nat_birds.ogg" } }
+      ]
+    },
+    {
+      "hallId": "sala_espacio",
+      "slots": [
+        { "wall": 0, "slot": 0, "asset": { "imagen": "res://media/images/pillars.jpg",          "audio": "res://media/audio/esp_stellardrone.ogg" } },
+        { "wall": 0, "slot": 1, "asset": { "imagen": "res://media/images/crab_nebula.jpg",      "audio": "res://media/audio/esp_stellardrone.ogg" } },
+        { "wall": 0, "slot": 2, "asset": { "video":  "res://media/video/esp_eso_timelapse.ogv", "video_with_audio": true } },
+        { "wall": 1, "slot": 0, "asset": { "imagen": "res://media/images/milky_way.jpg" } },
+        { "wall": 1, "slot": 1, "asset": { "imagen": "res://media/images/saturn.jpg" } },
+        { "wall": 1, "slot": 2, "asset": { "imagen": "res://media/images/andromeda.jpg" } }
       ]
     }
   ]
